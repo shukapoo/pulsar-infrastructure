@@ -1,5 +1,5 @@
 variable "nfs_disk_size" {
-  default = 300
+  default = 1000
 }
 
 variable "flavors" {
@@ -8,12 +8,12 @@ variable "flavors" {
     "central-manager" = "standard.medium"
     "nfs-server" = "standard.medium"
     "exec-node" = "standard.xxlarge"
-    "gpu-node" = "m1.medium"
+    "gpu-node" = "gpu.1.4gpu"
   }
 }
 
 variable "exec_node_count" {
-  default = 2
+  default = 10
 }
 
 variable "gpu_node_count" {
@@ -34,7 +34,7 @@ variable "public_key" {
   type = "map"
   default = {
     name = "key_label"
-    pubkey = "ssh-rsa blablablabla..."
+    pubkey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCVmFc0fiB+sPM2FuIcGVUEzbmLb8+0tFbFz9WsEr4mwUA0eH5+KAJ7EXv3ifcf25eAwLEMXaOMbdVP0dQ5Lsh8b+pH2yu40aVhkTT57UrcH1q3c7arbE2C8Z65+jCDRWbAR24wXSyKvKM7BQG6hxIL2Ql8mtLtsT0D2S0TkXeRHseJgdzN1uP/tKIk+NV6TA4vsIwHVrJ84MJAPkuix13T+KV3g/p3cihgKB/FW4BN1DPSKzN7nDV4zYBcX6jB3mGTX2EIM2E2mDM6I+dMQDeIAga0j9T6bLnUYFpCpId6Emfo+bwyaUC53De7X4AH9fDa5tjXjZ8QeulzyV/l+zZt cloud-user@pulsar-bastion.novalocal"
   }
 }
 
@@ -43,7 +43,7 @@ variable "name_prefix" {
 }
 
 variable "name_suffix" {
-  default = ".usegalaxy.eu"
+  default = ".pulsar.csc.fi"
 }
 
 variable "secgroups_cm" {
@@ -70,9 +70,9 @@ variable "public_network" {
 variable "private_network" {
   type = "map"
   default  = {
-    name = "vgcn-private"
-    subnet_name = "vgcn-private-subnet"
-    cidr4 = "192.168.199.0/24"
+    name = "project_2002859"
+    subnet_name = "project_2002859"
+    cidr4 = "192.168.1.0/24"
   }
 }
 
